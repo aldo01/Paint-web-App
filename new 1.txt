@@ -1,0 +1,59 @@
+Object.extend( DatePicker.prototype, {                            //$JQ.fn.getInputedDaysSum=function(dateString){};
+	getInputedDaysSum : function(dateString) {
+		var _d = this._df.match(dateString);
+		return _d[0] * 365 + _d[1] * 30 + _d[2] * 1;
+	},
+	getDaysSum : function() {
+		var _d = this._df.match($JQ(this._relative).val());
+		return _d[0] * 365 + _d[1] * 30 + _d[2] * 1;
+	},
+	
+	/**
+	 * Get selected date object.
+	 */
+	getSelectedDate: function() {
+		// update model from input element
+		this._initCurrentDate();
+	
+		var newDate = new Date(this._current_year, this._current_mon,
+				this._current_day);
+		return newDate;
+	},
+	
+	/**
+	 * Set selected date object.
+	 * @param newDate selected date
+	 */
+	setSelectedDate: function( newDate ) {
+		// update model from date object
+		var date = '';
+		if ( newDate != null ) 
+			 date = this._df.date_to_string(
+				newDate.getFullYear(), newDate.getMonth() + 1, newDate
+						.getDate());
+						
+		$JQ(this._relative).val(date)		
+		this._initCurrentDate();
+	},
+	
+	/**
+	 * Set today date.
+	 * @param date new today date
+	 */
+	setTodayDate: function( date ) {
+		this._todayDate = date;
+	}
+});
+
+
+
+$JQ.fn.extend({
+getInputedDaysSum : function(dateString){
+    var _d = this._df.match(dateString);
+		return _d[0] * 365 + _d[1] * 30 + _d[2] * 1;
+},
+
+
+
+});
+

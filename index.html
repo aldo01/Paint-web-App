@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Drawing-app</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="toolbar">
+    <div id="radiusOpt">
+      Brush size: <span id="current">10</span>
+      <div id="radAdd" class="radiusCtrl">+</div>
+      <div id="radSub" class="radiusCtrl">-</div>
+    
+
+    <div id="colors">
+      Color:  <input type="color" value="#FF0000" id="color">
+    </div>
+	
+	</div>
+	<div id="controllers">
+  <span class="controller" id="undo">undo</span>  
+  <span class="controller" id="redo">redo</span>
+  <span class="controller" id="pencil">pencil</span>
+</div>
+
+    <div id="options">
+	   <div id="Text">Text</div>
+      <div id="Line">Line</div>
+	   <div id="rect">rect</div>
+	   
+	   <div id="clear">Clear</div>
+	    <div id="circle">circle</div>	  
+    </div>
+  </div>
+
+  <canvas id="c">HTML5 is not Supported! :(</canvas>
+
+  <script src="main.js"></script>
+  <script src="controls.js"></script>
+  <script src="color.js"></script>
+  <script src="save.js"></script>
+  
+  
+</body>
+</html>
